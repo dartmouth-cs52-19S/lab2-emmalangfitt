@@ -156,7 +156,7 @@ button:hover {
 }
 
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 750px) {
     .question {
         height: 80vh;
         width: 90vw;
