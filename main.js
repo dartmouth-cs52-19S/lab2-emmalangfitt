@@ -12,22 +12,100 @@ $('#done').on('click', function(e) {
 
     // now you have an array of choices = ["valueofradiobox1", "valueofradiobox2", "valueofradiobox2"]
     // you'll need to do some calculations with this
-    var shows = ["30 Rock", 
-        "New Girl", 
-        "Friends", 
-        "Brooklyn Nine-Nine", 
-        "How I Met Your Mother", 
-        "The Office"
+    var shows = ["You should watch 30 Rock!", 
+        "You should watch New Girl!", 
+        "You should watch Friends!", 
+        "You should watch Brooklyn Nine-Nine!", 
+        "You should watch How I Met Your Mother!", 
+        "You should watch The Office!",
+        "You need to finish every question!"
     ];
 
-    $("#result").text(shows[calc_result(choices)]);
+    var show_gifs= ["<img src='results/thirty_rock.gif'>", 
+        "<img src='results/new_girl.gif'>", 
+        "<img src='results/friends.gif'>", 
+        "<img src='results/b99.gif'>", 
+        "<img src='results/himym.gif'>", 
+        "<img src='results/the_office.gif'>",
+        "<img src='results/not_done.gif'>"
+    ];
+
+    if($(".options").length > 0) {
+        $("#result").text(shows[6]);
+        $("#result_img").html(show_gifs[6]);
+    } else {
+        $("#result").text(shows[calc_result(choices)]);
+        $("#result_img").html(show_gifs[calc_result(choices)]);
+    }
 });
 
+// https://www.w3schools.com/jquery/eff_fadeout.asp
 window.onclick = function(event) {
     if (event.target == modal) {
-      modal.style.display = "none";
+        $(".modal").fadeOut();
     }
 }
+
+// https://www.w3schools.com/howto/howto_js_remove_class.asp
+// https://www.w3schools.com/howto/howto_js_add_class.asp
+// https://stackoverflow.com/questions/13060313/checking-if-at-least-one-radio-button-has-been-selected-javascript
+$("input[type=radio]").on('click', function(e) {
+    if ($("input[name=q1]:checked").length > 0) {
+        document.getElementById("question1").classList.remove("options");
+        document.getElementById("question1").classList.add("answered");
+        $("input[name=q1]:not(:checked) ~ label img").css("opacity", .5);
+        $("input[name=q1]:checked + label img").css("opacity", 1);
+    }
+
+    if ($("input[name=q2]:checked").length > 0) {
+        document.getElementById("question2").classList.remove("options");
+        document.getElementById("question2").classList.add("answered");
+        $("input[name=q2]:not(:checked) ~ label").css("opacity", .5);
+        $("input[name=q2]:checked + label").css("opacity", 1);
+    }
+
+    if ($("input[name=q3]:checked").length > 0) {
+        document.getElementById("question3").classList.remove("options");
+        document.getElementById("question3").classList.add("answered");
+        $("input[name=q3]:not(:checked) ~ label img").css("opacity", .5);
+        $("input[name=q3]:checked + label img").css("opacity", 1);
+    }
+
+    if ($("input[name=q4]:checked").length > 0) {
+        document.getElementById("question4").classList.remove("options");
+        document.getElementById("question4").classList.add("answered");
+        $("input[name=q4]:not(:checked) ~ label").css("opacity", .5);
+        $("input[name=q4]:checked + label").css("opacity", 1);
+    }
+
+    if ($("input[name=q5]:checked").length > 0) {
+        document.getElementById("question5").classList.remove("options");
+        document.getElementById("question5").classList.add("answered");
+        $("input[name=q5]:not(:checked) ~ label img").css("opacity", .5);
+        $("input[name=q5]:checked + label img").css("opacity", 1);
+    }
+
+    if ($("input[name=q6]:checked").length > 0) {
+        document.getElementById("question6").classList.remove("options");
+        document.getElementById("question6").classList.add("answered");
+        $("input[name=q6]:not(:checked) ~ label").css("opacity", .5);
+        $("input[name=q6]:checked + label").css("opacity", 1);
+    }
+
+    if ($("input[name=q7]:checked").length > 0) {
+        document.getElementById("question7").classList.remove("options");
+        document.getElementById("question7").classList.add("answered");
+        $("input[name=q7]:not(:checked) ~ label img").css("opacity", .5);
+        $("input[name=q7]:checked + label img").css("opacity", 1);
+    }
+
+    if ($("input[name=q8]:checked").length > 0) {
+        document.getElementById("question8").classList.remove("options");
+        document.getElementById("question8").classList.add("answered");
+        $("input[name=q8]:not(:checked) ~ label img").css("opacity", .5);
+        $("input[name=q8]:checked + label img").css("opacity", 1);
+    }
+});
 
 
 function calc_result(choices) {

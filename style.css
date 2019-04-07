@@ -55,7 +55,7 @@ p {
     box-shadow: 0 4px 10px #999999;
 }
 
-.options {
+.options, .answered {
     display: flex; 
     justify-content: center;
     flex-wrap: wrap;
@@ -65,7 +65,7 @@ p {
     width: 100%;
 }
 
-.options label {
+.options label, .answered label {
     width: 30%;
     display: flex;
     justify-content: center;
@@ -77,13 +77,17 @@ p {
     opacity: .5;
 }
 
-input[type=radio]:checked + label img {
+.answered input[type=radio]:not(:checked) + label:hover {
     transform: scale(1.02);
-    box-shadow: 2px 2px 5px #999999;
+}
+
+input[type=radio]:checked + label img {
+    transform: scale(1.03);
+    box-shadow: 3px 3px 5px #999999;
 }
 
 input[type=radio]:checked + label {
-    transform: scale(1.02);
+    transform: scale(1.03);
     color: #E50914;
 }
 
@@ -114,16 +118,40 @@ button:hover {
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    animation: fade .3s;
   }
 
-  .modal-content {
-    background-color: #fefefe;
+.modal-content {
+    background-color: #ffffff;
     width: 70vw;
     height: 80vh;
     margin: auto;
     margin-top: 5vh;
     border-radius: 10px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+    box-shadow: 3px 3px 7px #555555;
+}
+
+#result_text {
+    display: flex;
+    flex-direction: row;
+}
+
+#result_text p {
+    font-size: 4vw;
+}
+
+#result_img img {
+    height: 20vw;
+}
+
+@keyframes fade {
+    0% {
+    opacity: 0;
+    } 100% {
+    opacity: 1;
+    }
+}
