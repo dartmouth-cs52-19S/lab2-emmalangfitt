@@ -1,4 +1,10 @@
+// used https://www.w3schools.com/howto/howto_css_modals.asp for modal tutorial
+
+var modal = document.getElementById('result_modal');
+
 $('#done').on('click', function(e) {
+    modal.style.display = "block";
+
     // gather all checked radio-button values
     var choices = $("input[type='radio']:checked").map(function(i, radio) {
         return $(radio).val();
@@ -6,16 +12,22 @@ $('#done').on('click', function(e) {
 
     // now you have an array of choices = ["valueofradiobox1", "valueofradiobox2", "valueofradiobox2"]
     // you'll need to do some calculations with this
-    var shows = ["thirty_rock", 
-        "new_girl", 
-        "friends", 
-        "b99", 
-        "himym", 
-        "the_office"
+    var shows = ["30 Rock", 
+        "New Girl", 
+        "Friends", 
+        "Brooklyn Nine-Nine", 
+        "How I Met Your Mother", 
+        "The Office"
     ];
 
-    $("#result").text("Your result is " + shows[calc_result(choices)]);
+    $("#result").text(shows[calc_result(choices)]);
 });
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+}
 
 
 function calc_result(choices) {

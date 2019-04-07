@@ -1,3 +1,129 @@
-img {
-    height: 100px;
+body {
+    padding: 0;
+    margin: 0;
 }
+
+input[type=radio] {
+    display: none;
+}
+
+img {
+    height: 10vw;
+    transition: all .2s ease-in-out;
+}
+
+p {
+    color: #111111;
+    font-family: 'Pathway Gothic One'; 
+    font-size: 2.5vw;
+    margin-top: 0;
+}
+
+#topbar {
+    background-image: url("imgs/topbar.jpg");
+    height: 30vh;
+    width: 100vw;
+    /* color: #E50914; */
+    color: #ffffff;
+    font-family: 'Pathway Gothic One'; 
+    font-size: 3vw;
+    text-shadow: 0 4px 4px #111111;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 5vh;
+    padding-left: 1vw;
+    box-shadow: 4px 0 10px #999999;
+}
+
+#quiz {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4vh;
+}
+
+.question {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 60vw;
+    border-radius: 10px;
+    margin-bottom: 6vh;
+    box-shadow: 0 4px 10px #999999;
+}
+
+.options {
+    display: flex; 
+    justify-content: center;
+    flex-wrap: wrap;
+    font-family: 'Pathway Gothic One'; 
+    font-size: 2vw;
+    text-align: center;
+    width: 100%;
+}
+
+.options label {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    margin: 1%;
+    transition: all .2s ease-in-out;
+}
+
+.options label:hover {
+    opacity: .5;
+}
+
+input[type=radio]:checked + label img {
+    transform: scale(1.02);
+    box-shadow: 2px 2px 5px #999999;
+}
+
+input[type=radio]:checked + label {
+    transform: scale(1.02);
+    color: #E50914;
+}
+
+button {
+    height: 5.5vh;
+    width: 12vw;
+    background-color: #111111;
+    color: #ffffff;
+    font-family: 'Pathway Gothic One'; 
+    font-size: 1.5vw;
+    border-radius: 8px;
+    box-shadow: 1px 1px 5px #999999;
+    transition: all .2s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 3px 3px 5px #999999;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    width: 70vw;
+    height: 80vh;
+    margin: auto;
+    margin-top: 5vh;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
