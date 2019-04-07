@@ -1,6 +1,7 @@
 body {
     padding: 0;
     margin: 0;
+    overflow: auto;
 }
 
 input[type=radio] {
@@ -22,8 +23,7 @@ p {
 #topbar {
     background-image: url("imgs/topbar.jpg");
     height: 30vh;
-    width: 100vw;
-    /* color: #E50914; */
+    width: 100%;
     color: #ffffff;
     font-family: 'Pathway Gothic One'; 
     font-size: 3vw;
@@ -153,5 +153,48 @@ button:hover {
     opacity: 0;
     } 100% {
     opacity: 1;
+    }
+}
+
+
+@media only screen and (max-width: 850px) {
+    .question {
+        height: 30vh;
+        width: 90vw;
+        margin-bottom: 4vh;
+    }
+
+    img {
+        height: 15vw;
+    }
+
+    p {
+        font-size: 5vw;
+    }
+
+    .options, .answered {
+        font-size: 3vw;
+    }
+
+    button {
+        height: 4vh;
+        width: 20vw;
+        font-size: 3vw;
+    }
+
+    .modal-content {
+        height: 40vh;
+        width: 90vw;
+        margin-top: 25vh;
+    }
+
+    #topbar {
+        height: 20vh;
+        width: 100%;
+        font-size: 3.5vw;
+    }
+
+    #topbar h1 {
+        padding-left: 1vw;
     }
 }
