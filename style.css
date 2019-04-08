@@ -68,6 +68,7 @@ p {
     font-family: 'Pathway Gothic One'; 
     font-size: 2vw;
     text-align: center;
+    width: 100%;
 }
 
 .options label, .answered label {

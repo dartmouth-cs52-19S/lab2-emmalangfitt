@@ -12,7 +12,7 @@ $('#done').on('click', function(e) {
         return $(radio).val();
     }).toArray();
 
-    if(1==2/*$(".options").length > 0*/) {
+    if($(".options").length > 0) {
         $("#result").text("You need to finish every question!");
         $("#result_img").html("<img src='results/not_done.gif'>");
     } else {
@@ -33,99 +33,34 @@ window.onclick = function(event) {
 // https://stackoverflow.com/questions/13060313/checking-if-at-least-one-radio-button-has-been-selected-javascript
 //$("input[type=radio]").on('click', function(e)
 $("body").on('click', function(e) {
-    console.log("clicked");
-    if ($("input[name=q1]:checked").length > 0) {
-        document.getElementById("question1").classList.remove("options");
-        document.getElementById("question1").classList.add("answered");
-        $("input[name=q1]:not(:checked) ~ label img").css("opacity", .5);
-        $("input[name=q1]:checked + label img").css("opacity", 1);
-    }
-
-    if ($("input[name=q2]:checked").length > 0) {
-        document.getElementById("question2").classList.remove("options");
-        document.getElementById("question2").classList.add("answered");
-        $("input[name=q2]:not(:checked) ~ label").css("opacity", .5);
-        $("input[name=q2]:checked + label").css("opacity", 1);
-    }
-
-    if ($("input[name=q3]:checked").length > 0) {
-        document.getElementById("question3").classList.remove("options");
-        document.getElementById("question3").classList.add("answered");
-        $("input[name=q3]:not(:checked) ~ label img").css("opacity", .5);
-        $("input[name=q3]:checked + label img").css("opacity", 1);
-    }
-
-    if ($("input[name=q4]:checked").length > 0) {
-        document.getElementById("question4").classList.remove("options");
-        document.getElementById("question4").classList.add("answered");
-        $("input[name=q4]:not(:checked) ~ label").css("opacity", .5);
-        $("input[name=q4]:checked + label").css("opacity", 1);
-    }
-
-    if ($("input[name=q5]:checked").length > 0) {
-        document.getElementById("question5").classList.remove("options");
-        document.getElementById("question5").classList.add("answered");
-        $("input[name=q5]:not(:checked) ~ label img").css("opacity", .5);
-        $("input[name=q5]:checked + label img").css("opacity", 1);
-    }
-
-    if ($("input[name=q6]:checked").length > 0) {
-        document.getElementById("question6").classList.remove("options");
-        document.getElementById("question6").classList.add("answered");
-        $("input[name=q6]:not(:checked) ~ label").css("opacity", .5);
-        $("input[name=q6]:checked + label").css("opacity", 1);
-    }
-
-    if ($("input[name=q7]:checked").length > 0) {
-        document.getElementById("question7").classList.remove("options");
-        document.getElementById("question7").classList.add("answered");
-        $("input[name=q7]:not(:checked) ~ label img").css("opacity", .5);
-        $("input[name=q7]:checked + label img").css("opacity", 1);
-    }
-
-    if ($("input[name=q8]:checked").length > 0) {
-        document.getElementById("question8").classList.remove("options");
-        document.getElementById("question8").classList.add("answered");
-        $("input[name=q8]:not(:checked) ~ label img").css("opacity", .5);
-        $("input[name=q8]:checked + label img").css("opacity", 1);
+    for(var i=1; i<=num_qs; i++) {
+        if ($(`input[name=q${i}]:checked`).length > 0) {
+            document.getElementById(`question${i}`).classList.remove("options");
+            document.getElementById(`question${i}`).classList.add("answered");
+            $(`input[name=q${i}]:not(:checked) ~ label`).css("opacity", .5);
+            $(`input[name=q${i}]:checked + label`).css("opacity", 1);
+        }
     }
 });
 
-
+// https://stackoverflow.com/questions/1295584/most-efficient-way-to-create-a-zero-filled-javascript-array
 function calc_result(choices) {
-    var thirty_rock = 0;
-    var new_girl = 1;
-    var friends = 2; 
-    var b99 = 3;
-    var himym = 4;
-    var the_office = 5; 
-    var shows = [0, 0, 0, 0, 0, 0];
+    var score = new Array(results.length).fill(0);;
 
     var idx = 0;
     while (idx < choices.length) {
-        if (choices[idx] == 1) {
-            shows[thirty_rock] = shows[thirty_rock] + 1;
-        } else if (choices[idx] == 2) {
-            shows[new_girl] = shows[new_girl] + 1;
-        } else if (choices[idx] == 3) {
-            shows[friends] = shows[friends] + 1;
-        } else if (choices[idx] == 4) {
-            shows[b99] = shows[b99] + 1;
-        } else if (choices[idx] == 5) {
-            shows[himym] = shows[himym] + 1;
-        } else {
-            shows[the_office] = shows[the_office] + 1;
-        }
+        console.log(choices[idx]);
+        score[choices[idx]]++;
         idx++;
     };
 
     var max = 0;
     var max_idx = 0;
     idx = 0;
-    while (idx < 6) {
-        if(shows[idx]>max){
+    while (idx < results.length) {
+        if(score[idx]>max){
             max_idx = idx;
-            max = shows[idx];
+            max = score[idx];
             idx++;
         } else {
             idx++;
@@ -155,7 +90,7 @@ $.getJSON("data.json", function(data) {
             "</div>"
         );
         
-        var ans_idx = 1;
+        var ans_idx = 0;
         element.answers.forEach(e => {
             $(`#question${idx}`).append(
                 `<input type='radio' name='q${idx}' value='${ans_idx}' id='q${idx}-${ans_idx}'/>`

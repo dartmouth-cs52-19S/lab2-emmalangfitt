@@ -11,6 +11,34 @@
     ],
     "questions": [
         {
+            "question_name": "Which cup would you use?",
+            "answers": [
+                {
+                    "text": "",
+                    "img": "cups/thirty_rock.png"
+                },
+                {
+                    "text": "",
+                    "img": "cups/new_girl.png"
+                },
+                {
+                    "text": "",
+                    "img": "cups/friends.png"
+                }, {
+                    "text": "",
+                    "img": "cups/b99.png"
+                },
+                {
+                    "text": "",
+                    "img": "cups/himym.png"
+                },
+                {
+                    "text": "",
+                    "img": "cups/the_office.png"
+                }
+            ]
+        },
+        {
             "question_name": "Pick a word to describe your mood.",
             "answers": [
                 {
@@ -39,30 +67,170 @@
             ]
         },
         {
-            "question_name": "Which cup would you use?",
+            "question_name": "Pick a snack.",
             "answers": [
                 {
                     "text": "",
-                    "img": "cups/thirty_rock.png"
+                    "img": "snacks/thirty_rock.png"
                 },
                 {
                     "text": "",
-                    "img": "cups/new_girl.png"
+                    "img": "snacks/new_girl.png"
                 },
                 {
                     "text": "",
-                    "img": "cups/friends.png"
+                    "img": "snacks/friends.png"
                 }, {
                     "text": "",
-                    "img": "cups/b99.png"
+                    "img": "snacks/b99.png"
                 },
                 {
                     "text": "",
-                    "img": "cups/himym.png"
+                    "img": "snacks/himym.png"
                 },
                 {
                     "text": "",
-                    "img": "cups/the_office.png"
+                    "img": "snacks/the_office.png"
+                }
+            ]
+        },
+        {
+            "question_name": "What's your typical friday night?",
+            "answers": [
+                {
+                    "text": "Getting lost in a YouTube/Reddit rabbit hole",
+                    "img": ""
+                },
+                {
+                    "text": "Drinking games and movies with my roommates",
+                    "img": ""
+                },
+                {
+                    "text": "My book and a warm drink",
+                    "img": ""
+                }, {
+                    "text": "Trying a new restaurant or bar",
+                    "img": ""
+                },
+                {
+                    "text": "Dinner and drinks with friends",
+                    "img": ""
+                },
+                {
+                    "text": "Binging Netflix",
+                    "img": ""
+                }
+            ]
+        },
+        {
+            "question_name": "Pick a gif!",
+            "answers": [
+                {
+                    "text": "",
+                    "img": "gifs/thirty_rock.gif"
+                },
+                {
+                    "text": "",
+                    "img": "gifs/new_girl.gif"
+                },
+                {
+                    "text": "",
+                    "img": "gifs/friends.gif"
+                }, {
+                    "text": "",
+                    "img": "gifs/b99.gif"
+                },
+                {
+                    "text": "",
+                    "img": "gifs/himym.gif"
+                },
+                {
+                    "text": "",
+                    "img": "gifs/the_office.gif"
+                }
+            ]
+        },
+        {
+            "question_name": "What is your pet peeve?",
+            "answers": [
+                {
+                    "text": "People who seal a ziplock bag without removing the air first",
+                    "img": ""
+                },
+                {
+                    "text": "When videos force me to watch mandatory ads for scary movies",
+                    "img": ""
+                },
+                {
+                    "text": "When people steal your jokes",
+                    "img": ""
+                }, {
+                    "text": "Small talk and other general over-friendliness",
+                    "img": ""
+                },
+                {
+                    "text": "Dates who never text you back",
+                    "img": ""
+                },
+                {
+                    "text": "When you try something new and don't like it and go back to what you wanted in the first place",
+                    "img": ""
+                }
+            ]
+        },
+        {
+            "question_name": "Which tweet do you think is the funniest?",
+            "answers": [
+                {
+                    "text": "",
+                    "img": "tweets/thirty_rock.png"
+                },
+                {
+                    "text": "",
+                    "img": "tweets/new_girl.png"
+                },
+                {
+                    "text": "",
+                    "img": "tweets/friends.png"
+                }, {
+                    "text": "",
+                    "img": "tweets/b99.png"
+                },
+                {
+                    "text": "",
+                    "img": "tweets/himym.png"
+                },
+                {
+                    "text": "",
+                    "img": "tweets/the_office.png"
+                }
+            ]
+        },
+        {
+            "question_name": "Pick a color!",
+            "answers": [
+                {
+                    "text": "",
+                    "img": "colors/thirty_rock.png"
+                },
+                {
+                    "text": "",
+                    "img": "colors/new_girl.png"
+                },
+                {
+                    "text": "",
+                    "img": "colors/friends.png"
+                }, {
+                    "text": "",
+                    "img": "colors/b99.png"
+                },
+                {
+                    "text": "",
+                    "img": "colors/himym.png"
+                },
+                {
+                    "text": "",
+                    "img": "colors/the_office.png"
                 }
             ]
         }
