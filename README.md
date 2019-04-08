@@ -15,6 +15,6 @@ The JavaScript assumes that the JSON files includes a title, a pathway to a back
 ## Results
 I included JSON files to create two different quizzes. The first is a more extensive eight-question quiz to determine which sitcom you are in the mood to watch, and the second is a short three-question quiz to see which day of the week you are. To switch between the quizzes, change line 74 of `main.js` from `data_sitcoms.JSON` to `data_weekdays.JSON`.
 
-Each quiz is styled with four possible answer states (none selected, hover, selected, and non-selected) and the result is shown in a modal that fades in and out of view with some animated text. If the user has not finished each question, clicking the "done" button will show a message telling the user to complete the rest of the questions. I also included auto-scroll, so when the user answers a question the page automatically scrolls to the next question. 
+Each quiz is styled with four possible answer states (none selected, hover, selected, and non-selected) and the result is shown in a modal that fades in and out of view with some animated text. If the user has not finished each question, clicking the "done" button will show a message telling the user to complete the rest of the questions.
 
 If I were to revisit this project, I'd try to perfect the mobile display. The quiz works on mobile and the formatting isn't bad, but I think I could find a cleaner way to resize the question modules so that the options are more readable. 
