@@ -1,10 +1,10 @@
 // used https://www.w3schools.com/howto/howto_css_modals.asp for modal tutorial
-
 var modal = document.getElementById('result_modal');
 var num_qs = 0;
 var results = [];
 var results_imgs = [];
 
+// calculate results when "done" is clicked
 $('#done').on('click', function(e) {
     modal.style.display = "block";
 
@@ -12,6 +12,7 @@ $('#done').on('click', function(e) {
         return $(radio).val();
     }).toArray();
 
+    // check if all questions have been completed
     if($(".options").length > 0) {
         $("#result").text("You need to finish every question!");
         $("#result_img").html("<img src='results/not_done.gif'>");
@@ -21,18 +22,19 @@ $('#done').on('click', function(e) {
     }
 });
 
-// https://www.w3schools.com/jquery/eff_fadeout.asp
+// fade modal out when background window is clicked
+// found fadeOut through https://www.w3schools.com/jquery/eff_fadeout.asp
 window.onclick = function(event) {
     if (event.target == modal) {
         $(".modal").fadeOut();
     }
 }
 
-// https://www.w3schools.com/howto/howto_js_remove_class.asp
-// https://www.w3schools.com/howto/howto_js_add_class.asp
-// https://stackoverflow.com/questions/13060313/checking-if-at-least-one-radio-button-has-been-selected-javascript
-//$("input[type=radio]").on('click', function(e)
-$("body").on('click', function(e) {
+// used tutorials to add and remove css to change styling of answered questions
+// found removeClass through https://www.w3schools.com/howto/howto_js_remove_class.asp
+// found addClass through https://www.w3schools.com/howto/howto_js_add_class.asp
+// found .length through https://stackoverflow.com/questions/13060313/checking-if-at-least-one-radio-button-has-been-selected-javascript
+$("body").on('click', function(event) {
     for(var i=1; i<=num_qs; i++) {
         if ($(`input[name=q${i}]:checked`).length > 0) {
             document.getElementById(`question${i}`).classList.remove("options");
@@ -43,13 +45,13 @@ $("body").on('click', function(e) {
     }
 });
 
-// https://stackoverflow.com/questions/1295584/most-efficient-way-to-create-a-zero-filled-javascript-array
+// calculate results based on most frequent response number
+// found "new Array" through https://stackoverflow.com/questions/1295584/most-efficient-way-to-create-a-zero-filled-javascript-array
 function calc_result(choices) {
     var score = new Array(results.length).fill(0);;
 
     var idx = 0;
     while (idx < choices.length) {
-        console.log(choices[idx]);
         score[choices[idx]]++;
         idx++;
     };
@@ -70,7 +72,7 @@ function calc_result(choices) {
     return max_idx;
 }
 
-
+// load data from JSON and append html to display questions
 $.getJSON("data_sitcoms.json", function(data) {
     $("#title").text(data.title);
     $("#topbar").css("background-image", "url('" + data.background_img+ "')");
@@ -80,17 +82,17 @@ $.getJSON("data_sitcoms.json", function(data) {
         results_imgs.push(element.img);
     });
 
-    var idx = 1;
+    var idx = 1; // tracks question number
     data.questions.forEach(element => {
         $("#quiz").append(
-            "<div class='question'>" + 
+            `<div id='block${idx}' class='question'>` + 
                 "<p>" + element.question_name + "</p>" +
                     `<div id='question${idx}' class='options'>` +
                     "</div>" +
             "</div>"
         );
         
-        var ans_idx = 0;
+        var ans_idx = 0; // tracks answer number for each question
         element.answers.forEach(e => {
             $(`#question${idx}`).append(
                 `<input type='radio' name='q${idx}' value='${ans_idx}' id='q${idx}-${ans_idx}'/>`
