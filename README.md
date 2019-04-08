@@ -17,4 +17,8 @@ I included JSON files to create two different quizzes. The first is a more exten
 
 Each quiz is styled with four possible answer states (none selected, hover, selected, and non-selected) and the result is shown in a modal that fades in and out of view with some animated text. If the user has not finished each question, clicking the "done" button will show a message telling the user to complete the rest of the questions.
 
+<p align="center">
+  <img src="imgs/AnimatedModal.gif" title="Animated Modal">
+</p>
+
 If I were to revisit this project, I'd try to perfect the mobile display. The quiz works on mobile and the formatting isn't bad, but I think I could find a cleaner way to resize the question modules so that the options are more readable. 
