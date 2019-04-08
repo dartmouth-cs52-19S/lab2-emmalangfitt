@@ -54,7 +54,7 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    height: 40vw;
     width: 60vw;
     border-radius: 10px;
     margin-bottom: 6vh;
@@ -185,7 +185,7 @@ button:hover {
 
 @media only screen and (max-width: 750px) {
     .question {
-        height: 80vh;
+        height: 90vw;
         width: 90vw;
         margin-bottom: 4vh;
         text-align: center;
@@ -214,9 +214,21 @@ button:hover {
     }
 
     .modal-content {
-        height: 40vh;
+        height: 80vw;
         width: 90vw;
-        margin-top: 25vh;
+        margin-top: 15vh;
+    }
+
+    #result_img {
+        height: 40vw;
+    }
+
+    #result_img img {
+        height: 100%;
+    }
+
+    #result_text p {
+        font-size: 5vw;
     }
 
     #topbar {

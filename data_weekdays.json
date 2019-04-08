@@ -1,0 +1,100 @@
+{
+    "title": "What day of the week are you?",
+    "background_img": "imgs/topbar_2.jpg",
+    "outcomes": [
+            {"img": "results/monday.gif", "text": "You are..."},
+            {"img": "results/wednesday.gif", "text": "You are..."},
+            {"img": "results/friday.gif", "text": "You are..."},
+            {"img": "results/saturday.gif", "text": "You are..."},
+            {"img": "results/sunday.gif", "text": "You are..."},
+            {"img": "results/thursday.gif", "text": "You are..."}
+    ],
+    "questions": [
+        {
+            "question_name": "Pick a word.",
+            "answers": [
+                {
+                    "text": "notebook",
+                    "img": ""
+                },
+                {
+                    "text": "cactus",
+                    "img": ""
+                },
+                {
+                    "text": "jellybean",
+                    "img": ""
+                }, 
+                {
+                    "text": "sunshine",
+                    "img": ""
+                },
+                {
+                    "text": "pillow",
+                    "img": ""
+                },
+                {
+                    "text": "t-shirt",
+                    "img": ""
+                }
+            ]
+        },
+        {
+            "question_name": "Pick a color.",
+            "answers": [
+                {
+                    "text": "",
+                    "img": "colors/monday.png"
+                },
+                {
+                    "text": "",
+                    "img": "colors/wednesday.png"
+                },
+                {
+                    "text": "",
+                    "img": "colors/friday.png"
+                }, {
+                    "text": "",
+                    "img": "colors/saturday.png"
+                },
+                {
+                    "text": "",
+                    "img": "colors/sunday.png"
+                },
+                {
+                    "text": "",
+                    "img": "colors/thursday.png"
+                }
+            ]
+        },
+        {
+            "question_name": "What does your laptop look like?",
+            "answers": [
+                {
+                    "text": "in a protective case",
+                    "img": ""
+                },
+                {
+                    "text": "in a full-size patterned skin",
+                    "img": ""
+                },
+                {
+                    "text": "covered in random stickers",
+                    "img": ""
+                }, 
+                {
+                    "text": "covered in coordinated stickers",
+                    "img": ""
+                },
+                {
+                    "text": "blank and clean",
+                    "img": ""
+                },
+                {
+                    "text": "a single, well-placed sticker",
+                    "img": ""
+                }
+            ]
+        }
+    ]
+}

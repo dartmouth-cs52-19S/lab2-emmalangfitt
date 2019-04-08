@@ -71,7 +71,7 @@ function calc_result(choices) {
 }
 
 
-$.getJSON("data.json", function(data) {
+$.getJSON("data_weekdays.json", function(data) {
     $("#title").text(data.title);
     $("#topbar").css("background-image", "url('" + data.background_img+ "')");
 
