@@ -1,0 +1,70 @@
+{
+    "title": "WHICH SITCOM AM I IN THE MOOD FOR?",
+    "background_img": "imgs/topbar.jpg",
+    "outcomes": [
+            {"img": "results/thirty_rock.gif", "text": "You should watch 30 Rock!"},
+            {"img": "results/new_girl.gif", "text": "You should watch New Girl!"},
+            {"img": "results/friends.gif", "text": "You should watch Friends!"},
+            {"img": "results/b99.gif", "text": "You should watch Brooklyn Nine Nine!"},
+            {"img": "results/himym.gif", "text": "You should watch How I Met Your Mother!"},
+            {"img": "results/the_office.gif", "text": "You should watch The Office!"}
+    ],
+    "questions": [
+        {
+            "question_name": "Pick a word to describe your mood.",
+            "answers": [
+                {
+                    "text": "Weird",
+                    "img": ""
+                },
+                {
+                    "text": "Joyful",
+                    "img": ""
+                },
+                {
+                    "text": "Content",
+                    "img": ""
+                }, {
+                    "text": "Optimistic",
+                    "img": ""
+                },
+                {
+                    "text": "Annoyed",
+                    "img": ""
+                },
+                {
+                    "text": "Bored",
+                    "img": ""
+                }
+            ]
+        },
+        {
+            "question_name": "Which cup would you use?",
+            "answers": [
+                {
+                    "text": "",
+                    "img": "cups/thirty_rock.png"
+                },
+                {
+                    "text": "",
+                    "img": "cups/new_girl.png"
+                },
+                {
+                    "text": "",
+                    "img": "cups/friends.png"
+                }, {
+                    "text": "",
+                    "img": "cups/b99.png"
+                },
+                {
+                    "text": "",
+                    "img": "cups/himym.png"
+                },
+                {
+                    "text": "",
+                    "img": "cups/the_office.png"
+                }
+            ]
+        }
+    ]
+}

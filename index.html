@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="style.css">
@@ -8,7 +8,7 @@
 
     <body>
         <div id="topbar">
-            <h1>WHICH SITCOM AM I IN THE MOOD FOR?</h1>
+            <h1 id="title">WHICH SITCOM AM I IN THE MOOD FOR?</h1>
         </div>
 
         <div id="quiz">
@@ -160,6 +160,44 @@
             <button id="done">Done!</button>
         </div>
 
+        // whitespace character from https://www.lifewire.com/spaces-in-html-3466574
+        <div id="result_modal" class="modal">
+            <div class="modal-content">
+                <div id="result_text">
+                    <p id="result"></p>
+                </div>
+                <div id="result_img">
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+    </script>
+    <script src="main.js"></script>
+</html> 
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <div id="topbar">
+            <h1 id="title"></h1>
+        </div>
+
+        <div id="quiz">
+        </div>
+
         <!--whitespace character from https://www.lifewire.com/spaces-in-html-3466574-->
         <div id="result_modal" class="modal">
             <div class="modal-content">
@@ -171,6 +209,7 @@
             </div>
         </div>
 
+        <button id='done'>Done!</button>
     </body>
 
     <script

@@ -1,41 +1,23 @@
 // used https://www.w3schools.com/howto/howto_css_modals.asp for modal tutorial
 
 var modal = document.getElementById('result_modal');
+var num_qs = 0;
+var results = [];
+var results_imgs = [];
 
 $('#done').on('click', function(e) {
     modal.style.display = "block";
 
-    // gather all checked radio-button values
     var choices = $("input[type='radio']:checked").map(function(i, radio) {
         return $(radio).val();
     }).toArray();
 
-    // now you have an array of choices = ["valueofradiobox1", "valueofradiobox2", "valueofradiobox2"]
-    // you'll need to do some calculations with this
-    var shows = ["You should watch 30 Rock!", 
-        "You should watch New Girl!", 
-        "You should watch Friends!", 
-        "You should watch Brooklyn Nine-Nine!", 
-        "You should watch How I Met Your Mother!", 
-        "You should watch The Office!",
-        "You need to finish every question!"
-    ];
-
-    var show_gifs= ["<img src='results/thirty_rock.gif'>", 
-        "<img src='results/new_girl.gif'>", 
-        "<img src='results/friends.gif'>", 
-        "<img src='results/b99.gif'>", 
-        "<img src='results/himym.gif'>", 
-        "<img src='results/the_office.gif'>",
-        "<img src='results/not_done.gif'>"
-    ];
-
-    if($(".options").length > 0) {
-        $("#result").text(shows[6]);
-        $("#result_img").html(show_gifs[6]);
+    if(1==2/*$(".options").length > 0*/) {
+        $("#result").text("You need to finish every question!");
+        $("#result_img").html("<img src='results/not_done.gif'>");
     } else {
-        $("#result").text(shows[calc_result(choices)]);
-        $("#result_img").html(show_gifs[calc_result(choices)]);
+        $("#result").text(results[calc_result(choices)]);
+        $("#result_img").html("<img src='"+ results_imgs[calc_result(choices)]+ "'>");
     }
 });
 
@@ -49,7 +31,9 @@ window.onclick = function(event) {
 // https://www.w3schools.com/howto/howto_js_remove_class.asp
 // https://www.w3schools.com/howto/howto_js_add_class.asp
 // https://stackoverflow.com/questions/13060313/checking-if-at-least-one-radio-button-has-been-selected-javascript
-$("input[type=radio]").on('click', function(e) {
+//$("input[type=radio]").on('click', function(e)
+$("body").on('click', function(e) {
+    console.log("clicked");
     if ($("input[name=q1]:checked").length > 0) {
         document.getElementById("question1").classList.remove("options");
         document.getElementById("question1").classList.add("answered");
@@ -150,3 +134,43 @@ function calc_result(choices) {
 
     return max_idx;
 }
+
+
+$.getJSON("data.json", function(data) {
+    $("#title").text(data.title);
+    $("#topbar").css("background-image", "url('" + data.background_img+ "')");
+
+    data.outcomes.forEach(element => {
+        results.push(element.text);
+        results_imgs.push(element.img);
+    });
+
+    var idx = 1;
+    data.questions.forEach(element => {
+        $("#quiz").append(
+            "<div class='question'>" + 
+                "<p>" + element.question_name + "</p>" +
+                    `<div id='question${idx}' class='options'>` +
+                    "</div>" +
+            "</div>"
+        );
+        
+        var ans_idx = 1;
+        element.answers.forEach(e => {
+            $(`#question${idx}`).append(
+                `<input type='radio' name='q${idx}' value='${ans_idx}' id='q${idx}-${ans_idx}'/>`
+            );
+
+            if(e.text.length > 0) {
+                $(`#question${idx}`).append(`<label for='q${idx}-${ans_idx}'>`+e.text+`</label>`);
+            } else if (e.img.length > 0) {
+                $(`#question${idx}`).append(`<label for='q${idx}-${ans_idx}'><img src='`+e.img+`'></label>`);
+            }
+            ans_idx++;
+        })
+
+        idx++;
+    });
+
+    num_qs = idx;
+});
